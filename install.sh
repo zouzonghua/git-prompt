@@ -44,7 +44,7 @@ _ok "Downloaded"
 # ── 注入 rc 文件 ──────────────────────────────
 _inject() {
   local rc="$1"
-  [ -f "$rc" ] || return
+  [ -f "$rc" ] || return 0
   if grep -qF "$SOURCE_LINE" "$rc"; then
     _warn "Already sourced in $rc, skipping"
   else
