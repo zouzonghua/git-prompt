@@ -2,12 +2,12 @@
 # ─────────────────────────────────────────────
 # install.sh — git-prompt one-line installer
 # Usage:
-#   bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/git-prompt/main/install.sh)"
+#   bash -c "$(curl -fsSL https://raw.githubusercontent.com/zouzonghua/git-prompt/main/install.sh)"
 # ─────────────────────────────────────────────
 
 set -e
 
-REPO_URL="https://raw.githubusercontent.com/yourusername/git-prompt/main/git_prompt.sh"
+REPO_URL="https://raw.githubusercontent.com/zouzonghua/git-prompt/main/git_prompt.sh"
 SCRIPTS_DIR="$HOME/scripts"
 INSTALL_PATH="$SCRIPTS_DIR/git_prompt.sh"
 SOURCE_LINE="[ -f ~/scripts/git_prompt.sh ] && source ~/scripts/git_prompt.sh"
