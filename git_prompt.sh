@@ -65,10 +65,11 @@ elif [ -n "$BASH_VERSION" ]; then
   _ORIGINAL_PS1="$PS1"
  
   _set_git_ps1() {
-    local git_part
+    local git_part stripped
     git_part=$(_git_prompt)
     if [ -n "$git_part" ]; then
-      PS1="${_ORIGINAL_PS1%\$ }${git_part} \$ "
+      stripped=$(echo "$_ORIGINAL_PS1" | sed 's/\\$ $//')
+      PS1="${stripped}${git_part} \\$ "
     else
       PS1="$_ORIGINAL_PS1"
     fi
@@ -76,3 +77,4 @@ elif [ -n "$BASH_VERSION" ]; then
  
   PROMPT_COMMAND="_set_git_ps1${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 fi
+
