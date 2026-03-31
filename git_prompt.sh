@@ -68,7 +68,7 @@ elif [ -n "$BASH_VERSION" ]; then
     local git_part
     git_part=$(_git_prompt)
     if [ -n "$git_part" ]; then
-      PS1="${_ORIGINAL_PS1%\\\$}${git_part} \\$ "
+      PS1="${_ORIGINAL_PS1%\$ }${git_part} \$ "
     else
       PS1="$_ORIGINAL_PS1"
     fi
