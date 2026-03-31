@@ -40,7 +40,7 @@ _git_prompt() {
     fi
   fi
 
-  echo " ${color_open}[${branch}]${color_close}"
+  echo "${color_open}[${branch}]${color_close}"
 }
 
 # ── 追加到现有 PS1 ────────────────────────────
