@@ -40,7 +40,7 @@ _git_prompt() {
     fi
   fi
 
-  echo "${color_open}[${branch}]${color_close}"
+  echo " ${color_open}[${branch}]${color_close}"
 }
 
 # ── 追加到现有 PS1 ────────────────────────────
@@ -50,7 +50,13 @@ if [ -n "$ZSH_VERSION" ]; then
 
   _set_git_ps1() {
     [ -z "$_ORIGINAL_PS1" ] && _ORIGINAL_PS1="$PS1"
-    PS1="${_ORIGINAL_PS1%% \%#*} \$(_git_prompt) %# "
+    local git_part
+    git_part=$(_git_prompt)
+    if [ -n "$git_part" ]; then
+      PS1="${_ORIGINAL_PS1%% \%#*}${git_part} %# "
+    else
+      PS1="$_ORIGINAL_PS1"
+    fi
   }
 
   add-zsh-hook precmd _set_git_ps1
