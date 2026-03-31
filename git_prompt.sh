@@ -50,7 +50,7 @@ if [ -n "$ZSH_VERSION" ]; then
 
   _set_git_ps1() {
     [ -z "$_ORIGINAL_PS1" ] && _ORIGINAL_PS1="$PS1"
-    PS1="${_ORIGINAL_PS1%%\%#*}\$(_git_prompt) %# "
+    PS1="${_ORIGINAL_PS1%%\%#*} \$(_git_prompt) %# "
   }
 
   add-zsh-hook precmd _set_git_ps1
@@ -59,7 +59,7 @@ elif [ -n "$BASH_VERSION" ]; then
   _ORIGINAL_PS1="$PS1"
 
   _set_git_ps1() {
-    PS1="${_ORIGINAL_PS1%\\$ }$(_git_prompt) \\$ "
+    PS1="${_ORIGINAL_PS1%\\$ } $(_git_prompt) \\$ "
   }
 
   PROMPT_COMMAND="_set_git_ps1${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
