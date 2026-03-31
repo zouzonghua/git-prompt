@@ -39,4 +39,4 @@ Remove the source line from `~/.zshrc` or `~/.bashrc`, then open a new shell.
 
 ## License
 
-MIT
+[MIT](https://github.com/zouzonghua/git-prompt/blob/main/LICENSE)
