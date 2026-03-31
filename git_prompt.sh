@@ -63,10 +63,16 @@ if [ -n "$ZSH_VERSION" ]; then
 
 elif [ -n "$BASH_VERSION" ]; then
   _ORIGINAL_PS1="$PS1"
-
+ 
   _set_git_ps1() {
-    PS1="${_ORIGINAL_PS1%\\$ } $(_git_prompt) \\$ "
+    local git_part
+    git_part=$(_git_prompt)
+    if [ -n "$git_part" ]; then
+      PS1="${_ORIGINAL_PS1%\\\$}${git_part} \\$ "
+    else
+      PS1="$_ORIGINAL_PS1"
+    fi
   }
-
+ 
   PROMPT_COMMAND="_set_git_ps1${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 fi
