@@ -1,6 +1,5 @@
 # ─────────────────────────────────────────────
 # git_prompt.sh  — bash & zsh universal prompt
-# https://github.com/yourusername/git-prompt
 # ─────────────────────────────────────────────
 
 # ── git 分支 ──────────────────────────────────
